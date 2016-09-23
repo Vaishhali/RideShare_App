@@ -28,6 +28,7 @@ public class HomeRoutesAdapter  extends RecyclerView.Adapter<HomeRoutesAdapter.H
 
     private ArrayList<MyVehiclesModel> myVehiclesList;
     Activity mContext;
+    private static ClickListener clickListener;
 
     public HomeRoutesAdapter(Activity context, ArrayList<MyVehiclesModel> myVehiclesList) {
         this.mContext = context;
@@ -63,8 +64,8 @@ public class HomeRoutesAdapter  extends RecyclerView.Adapter<HomeRoutesAdapter.H
 
         if(position == 1) {
             holder.tvRouteName.setText("Office to Home");
-            holder.tvVehicleNumber.setText("5752");
-//            holder.tvMake.setText("8500 make");
+            holder.tvVehicleNumber.setText("KLO1-AV 1234");
+            holder.tvRouter.setText("Delhi - Sydney");
 //            holder.tvColour.setText("Red Color");
 //            holder.tvAC.setText("AC");
         }
@@ -75,25 +76,40 @@ public class HomeRoutesAdapter  extends RecyclerView.Adapter<HomeRoutesAdapter.H
         return 2;//myVehiclesList.size()
     }
 
-    public class HomeRouteHolder extends RecyclerView.ViewHolder {
-        public TextView tvRouteName, tvVehicleNumber;//, tvAC, tvCarName, tvCarModel;
+    public class HomeRouteHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public TextView tvRouteName, tvVehicleNumber, tvRouter;//, tvCarName, tvCarModel;
 //        LinearLayout layoutSubHeader;
 //        RelativeLayout layoutHeader;
         ImageView ivMenu;
 
         public HomeRouteHolder(View view) {
             super(view);
+            view.setOnClickListener(this);
 //            layoutHeader = (RelativeLayout) view.findViewById(R.id.layoutHeader);
 //            layoutSubHeader = (LinearLayout) view.findViewById(R.id.layoutSubHeader);
             tvRouteName = (TextView) view.findViewById(R.id.tvRouteName);
             tvVehicleNumber = (TextView) view.findViewById(R.id.tvVehicleNumber);
-//            tvAC = (TextView) view.findViewById(R.id.tvAC);
+            tvRouter = (TextView) view.findViewById(R.id.tvRouter);
 //            tvCarName = (TextView) view.findViewById(R.id.tvCarName);
 //            tvCarModel = (TextView) view.findViewById(R.id.tvCarModel);
             ivMenu = (ImageView) view.findViewById(R.id.iv_menu);
 //            genre = (TextView) view.findViewById(R.id.genre);
 //            year = (TextView) view.findViewById(R.id.year);
         }
+
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
+//        void onItemLongClick(int position, View v);
     }
 
     // Display anchored popup menu based on view selected
@@ -142,11 +158,11 @@ public class HomeRoutesAdapter  extends RecyclerView.Adapter<HomeRoutesAdapter.H
                         Button nbutton = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
                         nbutton.setTextColor(mContext.getResources().getColor(R.color.black_light));
                         return true;
-                    case R.id.details:
-                        Intent intent2 = new Intent(mContext, TripDetailsActivity.class);
-                        mContext.startActivity(intent2);
-                        mContext.overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
-                        return true;
+//                    case R.id.details:
+//                        Intent intent2 = new Intent(mContext, TripDetailsActivity.class);
+//                        mContext.startActivity(intent2);
+//                        mContext.overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
+//                        return true;
                     default:
                         return false;
                 }

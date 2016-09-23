@@ -1,6 +1,7 @@
 package com.sixs.rideshareapp.Fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
+import com.sixs.rideshareapp.activity.TripDetailsActivity;
 import com.sixs.rideshareapp.adapter.HomeRoutesAdapter;
 
 import java.util.ArrayList;
@@ -109,5 +111,13 @@ public class HomeFragment extends Fragment  {
         myVehiclesRecyclerview.setLayoutManager(mLayoutManager);
         myVehiclesRecyclerview.setItemAnimator(new DefaultItemAnimator());
         myVehiclesRecyclerview.setAdapter(myVehiclesAdapter);
+        myVehiclesAdapter.setOnItemClickListener(new HomeRoutesAdapter.ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+                Intent intent2 = new Intent(getActivity(), TripDetailsActivity.class);
+                startActivity(intent2);
+                getActivity().overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
+            }
+        });
     }
 }

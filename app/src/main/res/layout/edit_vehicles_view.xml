@@ -5,10 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".activity.AddVehiclesActivity">
 
+    <include layout="@layout/toolbar" />
+
     <ScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/layoutBottom"
+        android:layout_below="@+id/toolbar"
         android:fillViewport="true"
         android:scrollbars="none">
 
@@ -17,21 +21,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/layoutToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:orientation="vertical">
-
-                <include layout="@layout/toolbar" />
-            </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layoutToolbar"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -39,15 +34,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
-
-                    <!--<TextView
-                        android:id="@+id/tv_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="28dp"
-                        android:text="Add Vehicles"
-                        android:textColor="@color/gray"
-                        android:textSize="18sp" />-->
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -145,110 +131,47 @@
                         android:textOn="" />
                 </LinearLayout>
 
-                <!-- <RelativeLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginTop="18dp"
-                     android:paddingBottom="10dp"
-                     android:paddingLeft="10dp"
-                     android:paddingRight="10dp">
-
-                     <TextView
-                         android:id="@+id/tvCancel"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_toLeftOf="@+id/tv_confirm"
-                         android:padding="10dp"
-                         android:text="Cancel"
-                         android:textAllCaps="true"
-                         android:textColor="@color/gray_light_divider"
-                         android:textSize="18sp" />
-
-                     <TextView
-                         android:id="@+id/tvSave"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_alignParentRight="true"
-                         android:padding="10dp"
-                         android:text="Save"
-                         android:textAllCaps="true"
-                         android:textColor="@color/blue_light"
-                         android:textSize="18sp" />
-
-                 </RelativeLayout>-->
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
-
-                    <TextView
-                        android:background="?android:attr/selectableItemBackground"
-                        android:fontFamily="sans-serif"
-                        android:id="@+id/tvCancel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/tvSave"
-                        android:padding="10dp"
-                        android:text="Cancel"
-                        android:textAllCaps="true"
-                        android:textColor="@color/gray_light_divider"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:background="?android:attr/selectableItemBackground"
-                        android:fontFamily="sans-serif-medium"
-                        android:id="@+id/tvSave"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:padding="10dp"
-                        android:text="Save"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                </RelativeLayout>
 
             </LinearLayout>
-            <!--<LinearLayout
 
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layoutToolbar"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_margin="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:focusableInTouchMode="true">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/inputLayoutLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:descendantFocusability="afterDescendants"
-                        android:focusableInTouchMode="true">
-
-                        <EditText
-                            android:id="@+id/edtLocation"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="Enter pincode or location"
-                            android:inputType="phone"
-                            android:maxLength="10"
-                            android:singleLine="true"
-                            android:textSize="18sp" />
-
-                    </android.support.design.widget.TextInputLayout>
-                </LinearLayout>
-            </LinearLayout>-->
         </LinearLayout>
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tvSave"
+            android:background="?android:attr/selectableItemBackground"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="Cancel"
+            android:textAllCaps="true"
+            android:textColor="@color/gray_light_divider"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:fontFamily="sans-serif-medium"
+            android:padding="10dp"
+            android:text="Save"
+            android:textAllCaps="true"
+            android:textColor="@color/blue_light"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 </RelativeLayout>

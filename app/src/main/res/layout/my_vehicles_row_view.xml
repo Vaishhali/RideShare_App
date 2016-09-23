@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:text="KLO1-AV 1234"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/gray_light_divider"
                         android:textSize="14sp" />
 
                 </LinearLayout>
