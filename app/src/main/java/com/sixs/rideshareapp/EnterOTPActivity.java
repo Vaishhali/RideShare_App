@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 
 import com.sixs.rideshareapp.Model.MobileNumberModel;
 import com.sixs.rideshareapp.Util.SharedPreference;
+import com.sixs.rideshareapp.Util.Utils;
 import com.sixs.rideshareapp.activity.RegisterSuccessActivity;
 import com.google.gson.Gson;
 
@@ -111,7 +112,7 @@ public class EnterOTPActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            Log.v("RRR", "RegisterOTPAsync do in background ==== " +Utils.API_URL+Utils.OTP_REGISTER_URL);
+            Log.v("RRR", "RegisterOTPAsync do in background ==== " + Utils.API_URL+Utils.OTP_REGISTER_URL);
 //            postData(params[0]);
             // Create a new HttpClient and Post Header
             HttpClient httpclient = new DefaultHttpClient();

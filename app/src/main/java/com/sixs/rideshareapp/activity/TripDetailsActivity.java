@@ -20,7 +20,7 @@ import android.widget.TextView;
 
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
-import com.sixs.rideshareapp.Utils;
+import com.sixs.rideshareapp.Util.Utils;
 import com.sixs.rideshareapp.adapter.TripPlaceAdapter;
 import com.google.android.gms.maps.GoogleMap;
 

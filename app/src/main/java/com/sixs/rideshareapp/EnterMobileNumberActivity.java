@@ -21,6 +21,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.sixs.rideshareapp.Model.MobileNumberModel;
 import com.sixs.rideshareapp.Util.SharedPreference;
+import com.sixs.rideshareapp.Util.Utils;
 import com.sixs.rideshareapp.activity.RegisterSuccessActivity;
 import com.google.gson.Gson;
 
@@ -118,7 +119,7 @@ public class EnterMobileNumberActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            Log.v("RRR", "do in background ==== " +Utils.API_URL+Utils.MOBILE_NUMBER_REGISTER_URL);
+            Log.v("RRR", "do in background ==== " + Utils.API_URL+Utils.MOBILE_NUMBER_REGISTER_URL);
 //            postData(params[0]);
             // Create a new HttpClient and Post Header
             HttpClient httpclient = new DefaultHttpClient();

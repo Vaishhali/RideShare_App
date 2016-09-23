@@ -1,4 +1,4 @@
-package com.sixs.rideshareapp;
+package com.sixs.rideshareapp.Util;
 
 import android.app.Activity;
 import android.content.Context;

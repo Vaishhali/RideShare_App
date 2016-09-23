@@ -11,14 +11,11 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
-import com.sixs.rideshareapp.Utils;
 import com.sixs.rideshareapp.adapter.VehicleSpinnerAdapter;
 
 import java.util.ArrayList;
