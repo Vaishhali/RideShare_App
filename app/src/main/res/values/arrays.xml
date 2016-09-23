@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="array01">
+        <item name="id">HONDA AMAZE</item>
+        <item name="title">KLO1-AV 1234</item>
+    </string-array>
+
+    <string-array name="array02">
+        <item name="id">Ferrari California</item>
+        <item name="title">ART-TG 548</item>
+    </string-array>
+
+    <!-- etc. -->
+    <array name="vehicleArray">
+        <item>@array/array01</item>
+        <item>@array/array02</item>
+        <!-- etc. -->
+    </array>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="@string/home"
+            /><!--android:icon="@drawable/ic_home"-->
+        <item
+        android:id="@+id/my_vehicles"
+        android:title="@string/my_vehicles"
+       />
+        <!--android:icon="@drawable/ic_home"-->
+        <item
+            android:id="@+id/preferred_destinations"
+            android:title="@string/preferred_destinations" />
+        <!--<item
+            android:id="@+id/custom_route"
+            android:title="@string/custom_route" />-->
+
+        <item
+            android:id="@+id/my_trips"
+            android:title="@string/my_trips" />
+       <!-- <item
+        android:id="@+id/my_accounts"
+        android:title="@string/my_accounts" />-->
+
+    <item
+        android:id="@+id/my_score"
+        android:title="@string/my_scrore" />
+    <item
+        android:id="@+id/my_rating"
+        android:title="@string/my_rating" />
+    </group>
+    <group android:id="@+id/grp1" android:checkableBehavior="single" >
+        <item
+            android:id="@+id/settings"
+            android:title="@string/settings" />
+
+
+    </group>
+</menu>

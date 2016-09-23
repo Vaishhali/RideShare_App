@@ -1,0 +1,22 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">-->
+
+<android.support.v7.widget.SwitchCompat android:layout_margin="10dp"
+    android:id="@+id/switchCompanyName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:button="@null"
+    android:text="Company"
+    android:textColor="@color/gray_light_divider"
+    android:textOff=""
+    android:textOn=""
+    android:textSize="@dimen/customEntry"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:theme="@style/Color1SwitchStyle"
+    xmlns:app="http://schemas.android.com/apk/res-auto" />
+<!--
+
+</LinearLayout>-->
