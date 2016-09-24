@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/tools">
+    android:layout_marginTop="4dp">
 
     <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
@@ -10,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        app:cardUseCompatPadding="true"
         app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
         card_view:cardCornerRadius="0dp">-->
 
         <LinearLayout
@@ -26,53 +27,58 @@
                 android:layout_gravity="center_vertical"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
-                android:padding="10dp">
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
 
                 <ImageView
                     android:id="@+id/iv_gender"
-                    android:padding="0dp"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_centerVertical="true"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="left"
+                    android:padding="0dp"
                     android:src="@drawable/iv_steering" />
 
                 <LinearLayout
-                    android:layout_toLeftOf="@+id/iv_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_toLeftOf="@+id/iv_menu"
                     android:layout_toRightOf="@+id/iv_gender"
                     android:orientation="vertical">
 
                     <TextView
-                        android:textAllCaps="true"
                         android:id="@+id/tvCarName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:text="HONDA AMAZE"
+                        android:textAllCaps="true"
                         android:textColor="@color/gray"
                         android:textSize="14sp" />
+
                     <TextView
-                        android:textAllCaps="true"
+                        android:layout_marginTop="4dp"
                         android:id="@+id/tvCarModel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
                         android:text="KLO1-AV 1234"
-                        android:textColor="@color/gray"
-                        android:textSize="14sp" />
+                        android:textAllCaps="true"
+                        android:textColor="@color/gray_light_divider"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
-
-
-
             </RelativeLayout>
 
-
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_light_divider_setting"
+                android:visibility="visible" />-->
         </LinearLayout>
-  <!--  </android.support.v7.widget.CardView>-->
+    <!--</android.support.v7.widget.CardView>-->
 </RelativeLayout>

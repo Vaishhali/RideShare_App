@@ -17,10 +17,14 @@
     <color name="black_light">#80000000</color>
     <color name="black">#000000</color>
 
+    <color name="red">#FF0000</color>
+
     <color name="subheader">#787878</color>
     <color name="gray_light_divider">#626262</color>
     <color name="gray_light_divider_setting">#E1E1E1</color>
     <color name="gray_light_1">#d8D8FF</color>
     <color name="gray_light">#CCCCCC</color>
     <color name="gray">#272727</color>
+    <color name="gray_light_bg">#EEEEEE</color>
+
 </resources>

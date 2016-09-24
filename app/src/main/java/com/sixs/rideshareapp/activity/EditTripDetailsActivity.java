@@ -8,6 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +19,9 @@ import android.widget.TimePicker;
 
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
+import com.sixs.rideshareapp.adapter.HomeRoutesAdapter;
+import com.sixs.rideshareapp.adapter.MyVehiclesAdapter;
+import com.sixs.rideshareapp.adapter.VehicleAdapter;
 import com.sixs.rideshareapp.adapter.VehicleSpinnerAdapter;
 
 import java.util.ArrayList;
@@ -26,8 +32,11 @@ public class EditTripDetailsActivity extends AppCompatActivity {
     private int minute;
 
     TextView tvTime;
-    AppCompatSpinner spinnerVehicle;
+//    AppCompatSpinner spinnerVehicle;
     static final int TIME_DIALOG_ID = 1111;
+    private RecyclerView myVehiclesRecyclerview;
+    VehicleAdapter myVehiclesAdapter;
+    ArrayList<MyVehiclesModel> myVehiclesList = new ArrayList<MyVehiclesModel>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +61,37 @@ public class EditTripDetailsActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<MyVehiclesModel> list = new ArrayList<MyVehiclesModel>();
-//        MyVehiclesModel model = new MyVehiclesModel();
-//        model.setName("");
 
+        myVehiclesRecyclerview = (RecyclerView) findViewById(R.id.recycler_view);
+//        myVehiclesRecyclerview.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
+//        myVehiclesRecyclerview.setHasFixedSize(true);
 
-        spinnerVehicle = (AppCompatSpinner) findViewById(R.id.spinnerVehicle);
-        VehicleSpinnerAdapter adapter = new VehicleSpinnerAdapter(EditTripDetailsActivity.this, R.layout.vehicle_spinner_dropdown_item, list);
-//        adapter.setDropDownViewResource(R.layout.vehicle_spinner_dropdown_item);
-        spinnerVehicle.setAdapter(adapter);
+        myVehiclesAdapter = new VehicleAdapter(EditTripDetailsActivity.this, myVehiclesList);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        myVehiclesRecyclerview.setLayoutManager(mLayoutManager);
+        myVehiclesRecyclerview.setItemAnimator(new DefaultItemAnimator());
+        myVehiclesRecyclerview.setAdapter(myVehiclesAdapter);
+
+        myVehiclesAdapter.setOnItemClickListener(new VehicleAdapter.ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+//                v.setBackgroundColor(getResources().getColor(R.color.list_background_pressed));
+//                Intent intent2 = new Intent(EditTripDetailsActivity.this, TripDetailsActivity.class);
+//                startActivity(intent2);
+//                overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
+            }
+        });
+
+//        ArrayList<MyVehiclesModel> list = new ArrayList<MyVehiclesModel>();
+////        MyVehiclesModel model = new MyVehiclesModel();
+////        model.setName("");
+//
+//
+//        spinnerVehicle = (AppCompatSpinner) findViewById(R.id.spinnerVehicle);
+//        VehicleSpinnerAdapter adapter = new VehicleSpinnerAdapter(EditTripDetailsActivity.this, R.layout.vehicle_spinner_dropdown_item, list);
+////        adapter.setDropDownViewResource(R.layout.vehicle_spinner_dropdown_item);
+//        spinnerVehicle.setAdapter(adapter);
     }
 
     @Override

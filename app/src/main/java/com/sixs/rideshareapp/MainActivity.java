@@ -1,9 +1,9 @@
 package com.sixs.rideshareapp;
 
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -15,9 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.sixs.rideshareapp.Fragment.CustomRouteFragment;
 import com.sixs.rideshareapp.Fragment.HomeFragment;
-import com.sixs.rideshareapp.Fragment.MyAccountFragment;
 import com.sixs.rideshareapp.Fragment.MyRatingFragment;
 import com.sixs.rideshareapp.Fragment.MyScoreFragment;
 import com.sixs.rideshareapp.Fragment.MyTripsFragment;
@@ -32,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment homeFragment;
     PreferredDestinationFragment preferredDestinationFragment;
-    CustomRouteFragment customRouteFragment;
-    MyAccountFragment myAccountFragment;
     MyTripsFragment myTripsFragment;
     MyVehiclesFragment myVehiclesFragment;
     MyRatingFragment myRatingFragment;
@@ -52,10 +48,18 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initNavigationDrawer();
+
+        homeFragment = new HomeFragment();
+        myVehiclesFragment = new MyVehiclesFragment();
+        preferredDestinationFragment = new PreferredDestinationFragment();
+        myTripsFragment = new MyTripsFragment();
+        myRatingFragment = new MyRatingFragment();
+        myScoreFragment = new MyScoreFragment();
+        settingsFragment  = new SettingsFragment();
     }
 
     public void initNavigationDrawer() {
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
 
         navigationView = (NavigationView)findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -67,10 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (id){
                     case R.id.home:
                         toolbar.setTitle("Home");
-                        homeFragment = new HomeFragment();
+
                         if (homeFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, homeFragment).commit();
+
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
+
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -80,10 +85,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.my_vehicles:
                         toolbar.setTitle("My Vehicles");
-                        myVehiclesFragment = new MyVehiclesFragment();
+
                         if (myVehiclesFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, myVehiclesFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myVehiclesFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -93,10 +97,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.preferred_destinations:
                         toolbar.setTitle("Preferred Destinations");
-                        preferredDestinationFragment = new PreferredDestinationFragment();
+
                         if (preferredDestinationFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, preferredDestinationFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, preferredDestinationFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -120,10 +123,9 @@ public class MainActivity extends AppCompatActivity {
 //                        break;
                     case R.id.my_trips:
                         toolbar.setTitle("My Trips");
-                        myTripsFragment = new MyTripsFragment();
+
                         if (myTripsFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, myTripsFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myTripsFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -147,10 +149,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.my_rating:
                         toolbar.setTitle("My Rating");
-                        myRatingFragment = new MyRatingFragment();
+
                         if (myRatingFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, myRatingFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myRatingFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -161,10 +162,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.my_score:
                         toolbar.setTitle("My Score");
-                        myScoreFragment = new MyScoreFragment();
+
                         if (myScoreFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, myScoreFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myScoreFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -175,10 +175,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.settings:
                         toolbar.setTitle("Settings");
-                        settingsFragment  = new SettingsFragment();
+
                         if (settingsFragment != null) {
-                            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-                            fragmentManager.beginTransaction().replace(R.id.frame_container, settingsFragment).commit();
+                            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, settingsFragment).commit();
                             drawerLayout.closeDrawers();
                         } else {
                             // error in creating fragment
@@ -216,23 +215,28 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.closeDrawers();
         actionBarDrawerToggle.syncState();
 
-        toolbar.setTitle("Home");
+
         navigationView.getMenu().getItem(0).setChecked(true);
-        homeFragment = new HomeFragment();
-        if (homeFragment != null) {
-            MainActivity.this.overridePendingTransition(R.anim.activity_enter,R.anim.activity_exit);
-            fragmentManager.beginTransaction().replace(R.id.frame_container, homeFragment).commit();
+
+
+                homeFragment = new HomeFragment();
+                if (homeFragment != null) {
+                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
 //            drawerLayout.closeDrawers();
-        } else {
-            // error in creating fragment
-            Log.e("MainActivity", "Error in creating fragment");
-        }
+                } else {
+                    // error in creating fragment
+                    Log.e("MainActivity", "Error in creating fragment");
+                }
+                toolbar.setTitle("Home");
+
+
     }
 
     @Override
     public void onBackPressed() {
         if(currentPosition == 0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyDialogTheme);
+            builder.setTitle("Exit");
             builder.setMessage("Are you sure you want to exit?")
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -255,12 +259,21 @@ public class MainActivity extends AppCompatActivity {
 
             Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
             nbutton.setTextColor(getResources().getColor(R.color.black_light));
-//        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-//        pbutton.setBackgroundColor(Color.YELLOW);
+        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        pbutton.setTextColor(getResources().getColor(R.color.blue_light));
 //            navigationView.getsetCheckedItem(1);
         }
         else {
+            currentPosition = 0;
             navigationView.getMenu().getItem(0).setChecked(true);
+            toolbar.setTitle("Home");
+            if (homeFragment != null) {
+                fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
+                drawerLayout.closeDrawers();
+            } else {
+                // error in creating fragment
+                Log.e("MainActivity", "Error in creating fragment");
+            }
         }
     }
 

@@ -183,7 +183,6 @@
                     android:textColor="#787878"
                     android:textSize="13sp" />
 
-
                 <RelativeLayout
                     android:id="@+id/layoutBlockCompanies"
                     android:layout_width="match_parent"

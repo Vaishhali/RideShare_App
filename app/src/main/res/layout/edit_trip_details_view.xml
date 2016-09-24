@@ -40,39 +40,66 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
+                        android:fontFamily="sans-serif"
                         android:text="Choose Vehicle"
-                        android:textColor="@color/gray_light_divider"
-                        android:textSize="@dimen/customEntry" />
+                        android:textColor="#787878"
+                        android:textSize="13sp" />
 
-                    <android.support.v7.widget.AppCompatSpinner
-                        android:id="@+id/spinnerVehicle"
-                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:overlapAnchor="false" />
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"
+                        />
+                    <!---->
+                    <!--<android.support.v7.widget.AppCompatSpinner-->
+                        <!--android:id="@+id/spinnerVehicle"-->
+                        <!--style="@style/Base.Widget.AppCompat.Spinner.Underlined"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:overlapAnchor="false" />-->
+                </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light_divider_setting"
+                        android:visibility="visible" />
 
-                    <TextView
-                        android:layout_marginTop="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Time"
-                        android:textColor="@color/gray_light_divider"
-                        android:textSize="@dimen/customEntry" />
-
-                    <TextView
-                        android:background="?android:attr/selectableItemBackground"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:id="@+id/tvTime"
+                    <RelativeLayout
+android:padding="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="20dp"
-                        android:text="08:30 AM"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/customEntry" />
+                        android:orientation="horizontal">
 
-                </LinearLayout>
+                        <TextView
+                            android:padding="10dp"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="left"
+                            android:layout_toLeftOf="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:text="Edit Time"
+                            android:textColor="#787878"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:padding="10dp"
+                            android:layout_alignParentRight="true"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:fontFamily="sans-serif-medium"
+                            android:id="@+id/tvTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="08:30 AM"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/customEntry" />
+</RelativeLayout>
+
+
+
+
+
             </LinearLayout>
             </ScrollView>
         </LinearLayout>

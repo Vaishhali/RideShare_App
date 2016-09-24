@@ -1,6 +1,6 @@
 package com.sixs.rideshareapp.Fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -60,6 +60,7 @@ public class PreferredDestinationFragment extends Fragment implements FloatingAc
             case R.id.fabAddDestination:
                 Intent intent = new Intent(getActivity(), AddDestinationActivity.class);
                 getActivity().startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
                 break;
         }
     }

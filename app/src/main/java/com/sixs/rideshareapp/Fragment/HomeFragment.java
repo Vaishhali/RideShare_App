@@ -1,6 +1,6 @@
 package com.sixs.rideshareapp.Fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -21,6 +21,7 @@ import java.util.ArrayList;
 /**
  * Created by RASHMI on 14-09-2016.
  */
+
 public class HomeFragment extends Fragment  {
 
     TextView tvStartDrive, tvJoinTrip, tvPrivate;

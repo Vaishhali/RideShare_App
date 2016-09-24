@@ -67,5 +67,13 @@ public class AddDestinationActivity extends AppCompatActivity {
         }
         return super.onTouchEvent(event);
     }
+
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed();
+        this.finish();
+        this.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+    }
 }
 
