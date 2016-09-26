@@ -27,10 +27,11 @@
                 android:layout_gravity="center_vertical"
                 android:background="?android:attr/selectableItemBackground"
                 android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:paddingRight="20dp"
+
                 android:paddingBottom="20dp"
                 android:paddingTop="20dp">
+                <!--android:paddingLeft="15dp"
+                 android:paddingRight="20dp"-->
 
                 <ImageView
                     android:id="@+id/iv_gender"

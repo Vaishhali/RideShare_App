@@ -17,18 +17,24 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
 import com.sixs.rideshareapp.Util.Utils;
 import com.sixs.rideshareapp.adapter.TripPlaceAdapter;
-import com.google.android.gms.maps.GoogleMap;
 
 import java.util.ArrayList;
 
-public class TripDetailsActivity extends AppCompatActivity {
+public class TripDetailsActivity extends AppCompatActivity {//implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+//    private GoogleMap googleMap;
 
     TextView tvTime;
     private RecyclerView myVehiclesRecyclerview;
@@ -62,6 +68,37 @@ public class TripDetailsActivity extends AppCompatActivity {
         myVehiclesRecyclerview.setLayoutManager(mLayoutManager);
         myVehiclesRecyclerview.setItemAnimator(new DefaultItemAnimator());
         myVehiclesRecyclerview.setAdapter(myVehiclesAdapter);
+
+//        try {
+//            // Loading map
+//            initilizeMap();
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+    }
+
+//    /**
+//     * function to load map. If map is not created it will create it for you
+//     * */
+//    private void initilizeMap() {
+//        if (googleMap == null) {
+//            SupportMapFragment mapFrag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+//            mapFrag.getMapAsync(this);
+//
+//            // check if map is created successfully or not
+//            if (googleMap == null) {
+//                Toast.makeText(getApplicationContext(),
+//                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
+//                        .show();
+//            }
+//        }
+//    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        initilizeMap();
     }
 
     @Override
@@ -121,9 +158,10 @@ public class TripDetailsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        this.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+//        super.onBackPressed();
         this.finish();
+        this.overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
     }
 
     @Override
@@ -139,4 +177,12 @@ public class TripDetailsActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+//    @Override
+//    public void onMapReady(GoogleMap googleMap) {
+//        this.googleMap = googleMap;
+//        googleMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(0, 0))
+//                .title("Marker"));
+//    }
 }

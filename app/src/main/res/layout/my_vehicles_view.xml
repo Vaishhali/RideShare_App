@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
-        android:padding="@dimen/recyclerviewMargin"
+        android:paddingTop="@dimen/recyclerviewMargin"
+        android:paddingBottom="@dimen/recyclerviewMargin"
     />
 
     <android.support.design.widget.FloatingActionButton

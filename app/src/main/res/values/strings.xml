@@ -2,7 +2,7 @@
     <string name="app_name">RideShare</string>
     <string name="sender_id">521920203081</string>
 
-    <string name="home">Home</string>
+    <string name="home">Dashboard</string>
     <string name="my_vehicles">My Vehicles</string>
     <string name="preferred_destinations">Preferred Destinations</string>
     <string name="custom_route">Custom Route</string>

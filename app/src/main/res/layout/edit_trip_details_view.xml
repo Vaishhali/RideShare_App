@@ -72,10 +72,11 @@ android:padding="10dp"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:padding="10dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="10dp"
                             android:layout_alignParentLeft="true"
                             android:gravity="left"
-                            android:layout_toLeftOf="@+id/tvTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif"
@@ -83,7 +84,7 @@ android:padding="10dp"
                             android:textColor="#787878"
                             android:textSize="13sp" />
 
-                        <TextView
+                       <!-- <TextView
                             android:padding="10dp"
                             android:layout_alignParentRight="true"
                             android:background="?android:attr/selectableItemBackground"
@@ -93,10 +94,21 @@ android:padding="10dp"
                             android:layout_height="wrap_content"
                             android:text="08:30 AM"
                             android:textColor="@color/gray"
-                            android:textSize="@dimen/customEntry" />
+                            android:textSize="@dimen/customEntry" />-->
 </RelativeLayout>
 
-
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:layout_alignParentRight="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:fontFamily="sans-serif-medium"
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:30 AM"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/customEntry" />
 
 
 

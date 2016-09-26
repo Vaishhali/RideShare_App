@@ -29,13 +29,11 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/map"
-                    tools:context=".MapsActivity"
-                    android:name="com.google.android.gms.maps.SupportMapFragment" />-->
+                <!--<fragment-->
+                    <!--android:id="@+id/map"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--class="com.google.android.gms.maps.MapFragment" />-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -80,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_toLeftOf="@+id/tv_age"
                         android:fontFamily="sans-serif"
-                        android:text="Pattah Technopark"
+                        android:text="Pattah - Technopark"
                         android:textColor="@color/gray_light_divider"
                         android:textSize="@dimen/customTitle" />
 
@@ -144,11 +142,11 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/tvSave"
             android:background="?android:attr/selectableItemBackground"
-            android:fontFamily="sans-serif"
+            android:fontFamily="sans-serif-medium"
             android:padding="10dp"
             android:text="Cancel"
             android:textAllCaps="true"
-            android:textColor="@color/gray_light_divider"
+            android:textColor="@color/blue_light"
             android:textSize="16sp" />
 
         <TextView
@@ -163,6 +161,5 @@
             android:textAllCaps="true"
             android:textColor="@color/blue_light"
             android:textSize="16sp" />
-
     </RelativeLayout>
 </RelativeLayout>

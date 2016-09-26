@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (id){
                     case R.id.home:
-                        toolbar.setTitle("Home");
+                        toolbar.setTitle(getString(R.string.home));
 
                         if (homeFragment != null) {
 
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         currentPosition = 0;
                         break;
                     case R.id.my_vehicles:
-                        toolbar.setTitle("My Vehicles");
+                        toolbar.setTitle(getString(R.string.my_vehicles));
 
                         if (myVehiclesFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myVehiclesFragment).commit();
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         currentPosition++;
                         break;
                     case R.id.preferred_destinations:
-                        toolbar.setTitle("Preferred Destinations");
+                        toolbar.setTitle(getString(R.string.preferred_destinations));
 
                         if (preferredDestinationFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, preferredDestinationFragment).commit();
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 //                        currentPosition++;
 //                        break;
                     case R.id.my_trips:
-                        toolbar.setTitle("My Trips");
+                        toolbar.setTitle(getString(R.string.my_trips));
 
                         if (myTripsFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myTripsFragment).commit();
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 //                        break;
 
                     case R.id.my_rating:
-                        toolbar.setTitle("My Rating");
+                        toolbar.setTitle(getString(R.string.my_rating));
 
                         if (myRatingFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myRatingFragment).commit();
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.my_score:
-                        toolbar.setTitle("My Score");
+                        toolbar.setTitle(getString(R.string.my_scrore));
 
                         if (myScoreFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, myScoreFragment).commit();
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.settings:
-                        toolbar.setTitle("Settings");
+                        toolbar.setTitle(getString(R.string.settings));
 
                         if (settingsFragment != null) {
                             fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, settingsFragment).commit();
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                     // error in creating fragment
                     Log.e("MainActivity", "Error in creating fragment");
                 }
-                toolbar.setTitle("Home");
+                toolbar.setTitle(getString(R.string.home));
 
 
     }
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             currentPosition = 0;
             navigationView.getMenu().getItem(0).setChecked(true);
-            toolbar.setTitle("Home");
+            toolbar.setTitle(getString(R.string.home));
             if (homeFragment != null) {
                 fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
                 drawerLayout.closeDrawers();

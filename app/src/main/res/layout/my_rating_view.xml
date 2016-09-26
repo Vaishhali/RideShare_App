@@ -37,14 +37,15 @@
                 android:orientation="vertical">
 
                 <RatingBar
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="100dp"
                     android:id="@+id/ratingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:rating="2.0"
-                    android:stepSize="1.0" />
+                    android:stepSize="0.5"
+                    android:rating="2.5"
+                    android:theme="@style/RatingBar"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -61,7 +62,7 @@
                         android:textColor="@color/blue_light"
                         android:textSize="22sp" />
 
-                    <TextView
+                    <!--<TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -69,7 +70,7 @@
                         android:fontFamily="sans-serif"
                         android:text="41 users"
                         android:textColor="#787878"
-                        android:textSize="14sp" />
+                        android:textSize="14sp" />-->
                 </LinearLayout>
 
                 <TextView
@@ -79,6 +80,15 @@
                     android:fontFamily="sans-serif"
                     android:text="21 drives, 421 kms"
                     android:textColor="@color/gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="41 users"
+                    android:textColor="#787878"
                     android:textSize="14sp" />
 
             </LinearLayout>

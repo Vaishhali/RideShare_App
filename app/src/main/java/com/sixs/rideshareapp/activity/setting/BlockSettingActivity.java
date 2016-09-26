@@ -32,7 +32,7 @@ public class BlockSettingActivity extends AppCompatActivity {
     String blockType;
     private RecyclerView myVehiclesRecyclerview;
     BlockComapniesAdapter myVehiclesAdapter;
-    ArrayList<BlockCompaniesModel> myVehiclesList = new ArrayList<BlockCompaniesModel>();
+    public ArrayList<BlockCompaniesModel> myVehiclesList = new ArrayList<BlockCompaniesModel>();
     TextInputLayout inputLayoutBlock;
 
     @Override
@@ -75,12 +75,13 @@ public class BlockSettingActivity extends AppCompatActivity {
         inputLayoutBlock.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
 //                BlockSettingActivity.this.myVehiclesRecyclerview.getFilter().filter(cs);
             }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                myVehiclesAdapter.getFilter().filter(s.toString());
             }
 
             @Override
