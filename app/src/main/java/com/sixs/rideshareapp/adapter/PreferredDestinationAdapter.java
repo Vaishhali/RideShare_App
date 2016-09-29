@@ -19,6 +19,7 @@ public class PreferredDestinationAdapter extends RecyclerView.Adapter<PreferredD
 
     private ArrayList<MyVehiclesModel> myVehiclesList;
     Activity mContext;
+    private ClickListener clickListener;
 
     public PreferredDestinationAdapter(Activity context, ArrayList<MyVehiclesModel> myVehiclesList) {
         this.mContext = context;
@@ -35,8 +36,21 @@ public class PreferredDestinationAdapter extends RecyclerView.Adapter<PreferredD
 
     @Override
     public void onBindViewHolder(final PreferredDestinationAdapter.PreferredDestinationHolder holder, final int position) {
-//        if(position == 1) {
-            holder.tvDestination.setText("Destination 0"+(position+1));
+        if(position == 0) {
+            holder.tvDestination.setText("Destination 0" + (position + 1));
+        }
+        else if(position == 1) {
+            holder.tvDestination.setText("Destination 0" + (position + 1));
+        }
+        else if(position == 2) {
+            holder.tvDestination.setText("Destination 0" + (position + 1));
+        }
+        else if(position == 3) {
+            holder.tvDestination.setText("Destination 0" + (position + 1));
+        }
+        else if(position == 4) {
+            holder.tvDestination.setText("Destination 0" + (position + 1));
+        }
 //            holder.tvCarModel.setText("ART-TG 548");
 //            holder.tvMake.setText("8500 make");
 //            holder.tvColour.setText("Red Color");
@@ -49,7 +63,7 @@ public class PreferredDestinationAdapter extends RecyclerView.Adapter<PreferredD
         return 5;//myVehiclesList.size()
     }
 
-    public class PreferredDestinationHolder extends RecyclerView.ViewHolder {
+    public class PreferredDestinationHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView tvDestination;//, tvColour, tvAC, tvCarName, tvCarModel;
 //        LinearLayout layoutSubHeader;
 //        RelativeLayout layoutHeader;
@@ -57,6 +71,7 @@ public class PreferredDestinationAdapter extends RecyclerView.Adapter<PreferredD
 
         public PreferredDestinationHolder(View view) {
             super(view);
+            view.setOnClickListener(this);
 //            layoutHeader = (RelativeLayout) view.findViewById(R.id.layoutHeader);
 //            layoutSubHeader = (LinearLayout) view.findViewById(R.id.layoutSubHeader);
             tvDestination = (TextView) view.findViewById(R.id.tvDestination);
@@ -68,5 +83,19 @@ public class PreferredDestinationAdapter extends RecyclerView.Adapter<PreferredD
 //            genre = (TextView) view.findViewById(R.id.genre);
 //            year = (TextView) view.findViewById(R.id.year);
         }
+
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
+//        void onItemLongClick(int position, View v);
     }
 }

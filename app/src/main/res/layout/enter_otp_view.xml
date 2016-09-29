@@ -1,73 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sixs.rideshareapp.EnterOTPActivity">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context="com.sixs.rideshareapp.EnterOTPActivity">
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!--<include layout="@layout/toolbar" />-->
 
-        <LinearLayout
-            android:layout_centerHorizontal="true"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
 
-                <!--<include layout="@layout/toolbar" />-->
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp">
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/btnOTP"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/btnOTP"
-                    android:layout_marginRight="10dp"
+                <!--<TextView
+                    android:id="@+id/tv_phone_number"
+                    android:textColor="@color/blue_light"
+                    android:textSize="18sp"
+                    android:text="Enter Phone Number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:focusableInTouchMode="true">
+                    android:layout_marginBottom="10dp"/>-->
 
-                    <!--<TextView
-                        android:id="@+id/tv_phone_number"
-                        android:textColor="@color/blue_light"
-                        android:textSize="18sp"
-                        android:text="Enter Phone Number"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"/>-->
+                        android:ems="10"
+                        android:hint="Enter OTP"
+                        android:inputType="phone"
+                        android:maxLength="4"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
 
-                    <android.support.design.widget.TextInputLayout
-                        android:id="@+id/input_layout_otp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                </android.support.design.widget.TextInputLayout>
 
-                        <EditText
-                            android:hint="Enter OTP"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="phone"
-                            android:ems="10"
-                            android:textSize="14sp"
-                            android:singleLine="true"
-                            android:maxLength="4"
-                            android:id="@+id/edt_phone_number" />
+            </LinearLayout>
 
-                    </android.support.design.widget.TextInputLayout>
-
-                </LinearLayout>
-
-                    <android.support.v7.widget.AppCompatButton
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:background="@drawable/circle_save_button"
-                        android:id="@+id/btnOTP"
-                        android:layout_gravity="right"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"/>
-            </RelativeLayout>
-        </LinearLayout>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnOTP"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:background="@drawable/iv_save_gray" />
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

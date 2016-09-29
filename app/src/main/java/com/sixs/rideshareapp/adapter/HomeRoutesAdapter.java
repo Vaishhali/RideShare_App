@@ -28,7 +28,7 @@ public class HomeRoutesAdapter  extends RecyclerView.Adapter<HomeRoutesAdapter.H
 
     private ArrayList<MyVehiclesModel> myVehiclesList;
     Activity mContext;
-    private static ClickListener clickListener;
+    private ClickListener clickListener;
 
     public HomeRoutesAdapter(Activity context, ArrayList<MyVehiclesModel> myVehiclesList) {
         this.mContext = context;

@@ -60,7 +60,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="4.1"
                         android:textColor="@color/blue_light"
-                        android:textSize="22sp" />
+                        android:textSize="28sp" />
 
                     <!--<TextView
                         android:layout_width="wrap_content"
@@ -78,18 +78,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="sans-serif"
-                    android:text="21 drives, 421 kms"
+                    android:text="21 drives, 421 kms, 41 pax"
                     android:textColor="@color/gray"
                     android:textSize="14sp" />
 
-                <TextView
+                <!--<TextView
                     android:layout_marginTop="6dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:text="41 users"
                     android:textColor="#787878"
-                    android:textSize="14sp" />
+                    android:textSize="14sp" />-->
 
             </LinearLayout>
         </LinearLayout>

@@ -215,21 +215,16 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.closeDrawers();
         actionBarDrawerToggle.syncState();
 
-
         navigationView.getMenu().getItem(0).setChecked(true);
-
-
-                homeFragment = new HomeFragment();
-                if (homeFragment != null) {
-                    fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
+        homeFragment = new HomeFragment();
+        if (homeFragment != null) {
+            fragmentManager.beginTransaction().setCustomAnimations(R.anim.activity_exit,R.anim.activity_enter).replace(R.id.frame_container, homeFragment).commit();
 //            drawerLayout.closeDrawers();
-                } else {
-                    // error in creating fragment
-                    Log.e("MainActivity", "Error in creating fragment");
-                }
-                toolbar.setTitle(getString(R.string.home));
-
-
+        } else {
+            // error in creating fragment
+            Log.e("MainActivity", "Error in creating fragment");
+        }
+        toolbar.setTitle(getString(R.string.home));
     }
 
     @Override

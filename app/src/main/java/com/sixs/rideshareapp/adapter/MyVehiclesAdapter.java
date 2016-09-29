@@ -36,7 +36,6 @@ public class MyVehiclesAdapter  extends RecyclerView.Adapter<MyVehiclesAdapter.M
     @Override
     public MyVehiclesAdapter.MyVehiclesHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_vehicles_row_view, parent, false);
-
         return new MyVehiclesHolder(itemView);
     }
 
@@ -64,9 +63,9 @@ public class MyVehiclesAdapter  extends RecyclerView.Adapter<MyVehiclesAdapter.M
         if(position == 1) {
             holder.tvCarName.setText("Ferrari California");
             holder.tvCarModel.setText("ART-TG 548");
-            holder.tvMake.setText("8500 make");
+            holder.tvMake.setText("Rashmi Narola");
             holder.tvColour.setText("Red Color");
-            holder.tvAC.setText("AC");
+            holder.tvAC.setText("A/C");
         }
     }
 

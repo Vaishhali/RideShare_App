@@ -12,6 +12,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import com.sixs.rideshareapp.adapter.VehicleAdapter;
 import com.sixs.rideshareapp.adapter.VehicleSpinnerAdapter;
 
 import java.util.ArrayList;
+import java.util.logging.Handler;
 
 public class EditTripDetailsActivity extends AppCompatActivity {
 
@@ -75,7 +77,21 @@ public class EditTripDetailsActivity extends AppCompatActivity {
 
         myVehiclesAdapter.setOnItemClickListener(new VehicleAdapter.ClickListener() {
             @Override
-            public void onItemClick(int position, View v) {
+            public void onItemClick(final int position, View v) {
+//                for (int i = 0; i < myVehiclesList.size(); i++) {
+//                    if(position == i)
+//                        myVehiclesList.get(i).setSelected(true);
+//                    else
+//                        myVehiclesList.get(position).setSelected(false);
+//                }
+                myVehiclesAdapter.pos = position;
+                new  android.os.Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        myVehiclesAdapter.notifyDataSetChanged();
+                    }
+                }, 200);
+
 //                v.setBackgroundColor(getResources().getColor(R.color.list_background_pressed));
 //                Intent intent2 = new Intent(EditTripDetailsActivity.this, TripDetailsActivity.class);
 //                startActivity(intent2);

@@ -28,7 +28,6 @@ public class TripPlaceAdapter  extends RecyclerView.Adapter<TripPlaceAdapter.Tri
     @Override
     public TripPlaceAdapter.TripPlaceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.trip_place_row_view, parent, false);
-
         return new TripPlaceHolder(itemView);
     }
 

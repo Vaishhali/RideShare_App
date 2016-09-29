@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="26dp"
-                    android:layout_toLeftOf="@+id/iv_menu"
+                    android:layout_toLeftOf="@+id/ivSelected"
                     android:layout_toRightOf="@+id/iv_gender"
                     android:orientation="vertical">
 
@@ -73,6 +73,17 @@
                         android:textSize="12sp" />
 
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivSelected"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:padding="5dp"
+                    android:src="@drawable/check" />
             </RelativeLayout>
 
             <!--<View

@@ -4,38 +4,41 @@
         <item
             android:id="@+id/home"
             android:title="@string/home"
-            /><!--android:icon="@drawable/ic_home"-->
+            android:icon="@mipmap/iv_home" /><!--android:icon="@drawable/ic_home"-->
         <item
-        android:id="@+id/my_vehicles"
-        android:title="@string/my_vehicles"
-       />
+            android:id="@+id/my_vehicles"
+            android:title="@string/my_vehicles"
+            android:icon="@mipmap/iv_steering" />
         <!--android:icon="@drawable/ic_home"-->
         <item
             android:id="@+id/preferred_destinations"
-            android:title="@string/preferred_destinations" />
+            android:title="@string/preferred_destinations"
+            android:icon="@mipmap/iv_destination" />
         <!--<item
             android:id="@+id/custom_route"
             android:title="@string/custom_route" />-->
 
         <item
             android:id="@+id/my_trips"
-            android:title="@string/my_trips" />
+            android:title="@string/my_trips"
+            android:icon="@mipmap/iv_trip" />
        <!-- <item
         android:id="@+id/my_accounts"
         android:title="@string/my_accounts" />-->
 
     <item
         android:id="@+id/my_score"
-        android:title="@string/my_scrore" />
+        android:title="@string/my_scrore"
+        android:icon="@mipmap/iv_score"/>
     <item
         android:id="@+id/my_rating"
-        android:title="@string/my_rating" />
+        android:title="@string/my_rating"
+        android:icon="@mipmap/iv_star"/>
     </group>
     <group android:id="@+id/grp1" android:checkableBehavior="single" >
         <item
             android:id="@+id/settings"
-            android:title="@string/settings" />
-
-
+            android:title="@string/settings"
+            android:icon="@mipmap/iv_setting"/>
     </group>
 </menu>

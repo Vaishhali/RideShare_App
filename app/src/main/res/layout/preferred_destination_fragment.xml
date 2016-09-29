@@ -6,11 +6,12 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:padding="@dimen/recyclerviewMargin" />
+        android:scrollbars="none" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_alignParentRight="true"

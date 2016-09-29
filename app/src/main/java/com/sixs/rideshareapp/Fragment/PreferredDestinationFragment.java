@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import com.sixs.rideshareapp.Model.MyVehiclesModel;
 import com.sixs.rideshareapp.R;
 import com.sixs.rideshareapp.activity.AddDestinationActivity;
+import com.sixs.rideshareapp.activity.TripDetailsActivity;
 import com.sixs.rideshareapp.adapter.PreferredDestinationAdapter;
 
 import java.util.ArrayList;
@@ -52,6 +54,15 @@ public class PreferredDestinationFragment extends Fragment implements FloatingAc
         myVehiclesRecyclerview.setLayoutManager(mLayoutManager);
         myVehiclesRecyclerview.setItemAnimator(new DefaultItemAnimator());
         myVehiclesRecyclerview.setAdapter(myVehiclesAdapter);
+        myVehiclesAdapter.setOnItemClickListener(new PreferredDestinationAdapter.ClickListener() {
+            @Override
+            public void onItemClick(int position, View v) {
+                Log.v("TTT", "On click");
+//                Intent intent2 = new Intent(getActivity(), TripDetailsActivity.class);
+//                startActivity(intent2);
+//                getActivity().overridePendingTransition(R.anim.activity_exit,R.anim.activity_enter);
+            }
+        });
     }
 
     @Override
